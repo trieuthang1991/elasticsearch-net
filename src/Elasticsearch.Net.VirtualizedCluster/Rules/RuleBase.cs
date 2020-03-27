@@ -49,7 +49,7 @@ namespace Elasticsearch.Net.VirtualizedCluster.Rules
 			where T : class
 		{
 			byte[] r;
-			using (var ms = MemoryStreamFactory.Default.Create())
+			using (var ms = ConnectionConfiguration.DefaultMemoryStreamFactory.Create())
 			{
 				LowLevelRequestResponseSerializer.Instance.Serialize(response, ms);
 				r = ms.ToArray();
