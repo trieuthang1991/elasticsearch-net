@@ -1,5 +1,6 @@
 ﻿namespace Nest
 {
+	[MapsApi("search_shards.json")]
 	public partial interface ISearchShardsRequest { }
 
 	// ReSharper disable once UnusedTypeParameter

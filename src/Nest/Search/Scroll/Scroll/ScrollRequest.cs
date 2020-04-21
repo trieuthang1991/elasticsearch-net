@@ -3,6 +3,7 @@ using System.Runtime.Serialization;
 
 namespace Nest
 {
+	[MapsApi("scroll.json")]
 	public partial interface IScrollRequest : ITypedSearchRequest
 	{
 		[DataMember(Name ="scroll")]

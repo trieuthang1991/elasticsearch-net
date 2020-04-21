@@ -7,6 +7,7 @@ using Elasticsearch.Net.Utf8Json;
 namespace Nest
 {
 	[ReadAs(typeof(SearchRequest))]
+	[MapsApi("search.json")]
 	public partial interface ISearchRequest : ITypedSearchRequest
 	{
 		/// <summary>
