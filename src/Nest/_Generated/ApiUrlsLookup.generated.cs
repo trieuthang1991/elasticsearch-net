@@ -70,6 +70,7 @@ namespace Nest
 		internal static ApiUrls NoNamespaceCount = new ApiUrls(new[]{"_count", "{index}/_count"});
 		internal static ApiUrls NoNamespaceCreate = new ApiUrls(new[]{"{index}/_create/{id}"});
 		internal static ApiUrls NoNamespaceDelete = new ApiUrls(new[]{"{index}/_doc/{id}"});
+		internal static ApiUrls NoNamespaceDeleteByQuery = new ApiUrls(new[]{"{index}/_delete_by_query"});
 		internal static ApiUrls NoNamespaceDeleteByQueryRethrottle = new ApiUrls(new[]{"_delete_by_query/{task_id}/_rethrottle"});
 		internal static ApiUrls NoNamespaceDeleteScript = new ApiUrls(new[]{"_scripts/{id}"});
 		internal static ApiUrls EnrichDeletePolicy = new ApiUrls(new[]{"_enrich/policy/{name}"});
@@ -81,6 +82,7 @@ namespace Nest
 		internal static ApiUrls NoNamespaceSourceExists = new ApiUrls(new[]{"{index}/_source/{id}"});
 		internal static ApiUrls NoNamespaceExplain = new ApiUrls(new[]{"{index}/_explain/{id}"});
 		internal static ApiUrls NoNamespaceFieldCapabilities = new ApiUrls(new[]{"_field_caps", "{index}/_field_caps"});
+		internal static ApiUrls NoNamespaceGet = new ApiUrls(new[]{"{index}/_doc/{id}"});
 		internal static ApiUrls NoNamespaceGetScript = new ApiUrls(new[]{"_scripts/{id}"});
 		internal static ApiUrls NoNamespaceSource = new ApiUrls(new[]{"{index}/_source/{id}"});
 		internal static ApiUrls GraphExplore = new ApiUrls(new[]{"{index}/_graph/explore"});
@@ -94,6 +96,7 @@ namespace Nest
 		internal static ApiUrls IndexLifecycleManagementRetry = new ApiUrls(new[]{"{index}/_ilm/retry"});
 		internal static ApiUrls IndexLifecycleManagementStart = new ApiUrls(new[]{"_ilm/start"});
 		internal static ApiUrls IndexLifecycleManagementStop = new ApiUrls(new[]{"_ilm/stop"});
+		internal static ApiUrls NoNamespaceIndex = new ApiUrls(new[]{"{index}/_doc/{id}", "{index}/_doc"});
 		internal static ApiUrls IndicesAnalyze = new ApiUrls(new[]{"_analyze", "{index}/_analyze"});
 		internal static ApiUrls IndicesClearCache = new ApiUrls(new[]{"_cache/clear", "{index}/_cache/clear"});
 		internal static ApiUrls IndicesClone = new ApiUrls(new[]{"{index}/_clone/{target}"});
@@ -203,8 +206,11 @@ namespace Nest
 		internal static ApiUrls NodesReloadSecureSettings = new ApiUrls(new[]{"_nodes/reload_secure_settings", "_nodes/{node_id}/reload_secure_settings"});
 		internal static ApiUrls NodesStats = new ApiUrls(new[]{"_nodes/stats", "_nodes/{node_id}/stats", "_nodes/stats/{metric}", "_nodes/{node_id}/stats/{metric}", "_nodes/stats/{metric}/{index_metric}", "_nodes/{node_id}/stats/{metric}/{index_metric}"});
 		internal static ApiUrls NodesUsage = new ApiUrls(new[]{"_nodes/usage", "_nodes/{node_id}/usage", "_nodes/usage/{metric}", "_nodes/{node_id}/usage/{metric}"});
+		internal static ApiUrls NoNamespacePing = new ApiUrls(new[]{""});
 		internal static ApiUrls NoNamespacePutScript = new ApiUrls(new[]{"_scripts/{id}", "_scripts/{id}/{context}"});
 		internal static ApiUrls NoNamespaceReindexOnServer = new ApiUrls(new[]{"_reindex"});
+		internal static ApiUrls NoNamespaceReindexRethrottle = new ApiUrls(new[]{"_reindex/{task_id}/_rethrottle"});
+		internal static ApiUrls NoNamespaceRenderSearchTemplate = new ApiUrls(new[]{"_render/template", "_render/template/{id}"});
 		internal static ApiUrls RollupDeleteJob = new ApiUrls(new[]{"_rollup/job/{id}"});
 		internal static ApiUrls RollupGetJob = new ApiUrls(new[]{"_rollup/job/{id}", "_rollup/job/"});
 		internal static ApiUrls RollupGetCapabilities = new ApiUrls(new[]{"_rollup/data/{id}", "_rollup/data/"});
@@ -214,6 +220,10 @@ namespace Nest
 		internal static ApiUrls RollupStartJob = new ApiUrls(new[]{"_rollup/job/{id}/_start"});
 		internal static ApiUrls RollupStopJob = new ApiUrls(new[]{"_rollup/job/{id}/_stop"});
 		internal static ApiUrls NoNamespaceExecutePainlessScript = new ApiUrls(new[]{"_scripts/painless/_execute"});
+		internal static ApiUrls NoNamespaceScroll = new ApiUrls(new[]{"_search/scroll"});
+		internal static ApiUrls NoNamespaceSearch = new ApiUrls(new[]{"_search", "{index}/_search"});
+		internal static ApiUrls NoNamespaceSearchShards = new ApiUrls(new[]{"_search_shards", "{index}/_search_shards"});
+		internal static ApiUrls NoNamespaceSearchTemplate = new ApiUrls(new[]{"_search/template", "{index}/_search/template"});
 		internal static ApiUrls SecurityAuthenticate = new ApiUrls(new[]{"_security/_authenticate"});
 		internal static ApiUrls SecurityChangePassword = new ApiUrls(new[]{"_security/user/{username}/_password", "_security/user/_password"});
 		internal static ApiUrls SecurityClearCachedRealms = new ApiUrls(new[]{"_security/realm/{realms}/_clear_cache"});
@@ -267,6 +277,8 @@ namespace Nest
 		internal static ApiUrls TasksGetTask = new ApiUrls(new[]{"_tasks/{task_id}"});
 		internal static ApiUrls TasksList = new ApiUrls(new[]{"_tasks"});
 		internal static ApiUrls NoNamespaceTermVectors = new ApiUrls(new[]{"{index}/_termvectors/{id}", "{index}/_termvectors"});
+		internal static ApiUrls NoNamespaceUpdate = new ApiUrls(new[]{"{index}/_update/{id}"});
+		internal static ApiUrls NoNamespaceUpdateByQuery = new ApiUrls(new[]{"{index}/_update_by_query"});
 		internal static ApiUrls NoNamespaceUpdateByQueryRethrottle = new ApiUrls(new[]{"_update_by_query/{task_id}/_rethrottle"});
 		internal static ApiUrls WatcherAcknowledge = new ApiUrls(new[]{"_watcher/watch/{watch_id}/_ack", "_watcher/watch/{watch_id}/_ack/{action_id}"});
 		internal static ApiUrls WatcherActivate = new ApiUrls(new[]{"_watcher/watch/{watch_id}/_activate"});

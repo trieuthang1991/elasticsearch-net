@@ -39,6 +39,7 @@ namespace ApiGenerator.Generator
 				new LowLevelClientImplementationGenerator(),
 				new RequestParametersGenerator(),
 				new EnumsGenerator(),
+				new ApiUrlsLookupsGenerator(),
 			};
 
 			var highLevelGenerators = new List<RazorGeneratorBase>
@@ -48,7 +49,6 @@ namespace ApiGenerator.Generator
 				new HighLevelClientImplementationGenerator(),
 				new DescriptorsGenerator(),
 				new RequestsGenerator(),
-				new ApiUrlsLookupsGenerator(),
 			};
 
 			await Generate(lowLevelGenerators, spec, highLevel: false);
