@@ -14,9 +14,9 @@ namespace ApiGenerator.Generator
 {
 	public class ApiGenerator
 	{
-		public static List<string> Warnings { get; private set; }
+		public static List<string> Warnings { get; private set; } = new List<string>();
 
-		public static async Task Generate(string downloadBranch, bool lowLevelOnly, params string[] folders)
+		public static async Task Generate(string downloadBranch, bool lowLevelOnly, RestApiSpec spec)
 		{
 			async Task Generate(IList<RazorGeneratorBase> generators, RestApiSpec restApiSpec, bool highLevel)
 			{
@@ -31,8 +31,7 @@ namespace ApiGenerator.Generator
 				}
 			}
 
-			Warnings = new List<string>();
-			var spec = CreateRestApiSpecModel(downloadBranch, folders);
+
 			var lowLevelGenerators = new List<RazorGeneratorBase>
 			{
 				//low level client
@@ -73,7 +72,7 @@ namespace ApiGenerator.Generator
 			Console.ResetColor();
 		}
 
-		private static RestApiSpec CreateRestApiSpecModel(string downloadBranch, string[] folders)
+		public static RestApiSpec CreateRestApiSpecModel(string downloadBranch, params string[] folders)
 		{
 			var directories = Directory.GetDirectories(GeneratorLocations.RestSpecificationFolder, "*", SearchOption.AllDirectories)
 				.Where(f => folders == null || folders.Length == 0 || folders.Contains(new DirectoryInfo(f).Name))

@@ -19,7 +19,7 @@ namespace Nest
 	{
 @foreach (var endpoint in m.Endpoints.Values)
 {
-	if (CodeConfiguration.IgnoredApisHighLevel.Contains(endpoint.Name))
+	if (CodeConfiguration.IgnoreHighLevelApi(endpoint.Name))
 	{
 		continue;
 	}
