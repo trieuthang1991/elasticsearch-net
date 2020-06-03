@@ -2,7 +2,7 @@
 // Elasticsearch B.V licenses this file to you under the Apache 2.0 License.
 // See the LICENSE file in the project root for more information
 
-﻿using System;
+ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
@@ -53,6 +53,10 @@ namespace Nest
 		/// <inheritdoc />
 		public IProperty Shape(Func<ShapePropertyDescriptor<T>, IShapeProperty> selector) =>
 			selector?.Invoke(new ShapePropertyDescriptor<T>());
+
+		/// <inheritdoc />
+		public IProperty Point(Func<PointPropertyDescriptor<T>, IPointProperty> selector) =>
+			selector?.Invoke(new PointPropertyDescriptor<T>());
 
 		/// <inheritdoc />
 		public IProperty IntegerRange(Func<IntegerRangePropertyDescriptor<T>, IIntegerRangeProperty> selector) =>
